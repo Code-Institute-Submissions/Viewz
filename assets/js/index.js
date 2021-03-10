@@ -20,3 +20,18 @@ let mapEvent;
 let map;
 let views = [];
 let marker;
+
+//Create a new view object
+
+// Event handlers
+
+//Functions
+// Getting the users current location coords from the browsers geolocation
+function initCoords() {
+  if (navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(loadMap, function () {
+      alert("Could not get your position");
+    });
+}
+
+// Call the functions
