@@ -87,4 +87,8 @@ function loadMap(pos) {
   displayList();
 }
 
+function renderMarker(view) {
+  L.marker(view.coords).addTo(map);
+}
+
 // Call the functions
