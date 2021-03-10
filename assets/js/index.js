@@ -34,4 +34,57 @@ function initCoords() {
     });
 }
 
+// Creaties a map using the Leaflet Js API
+function loadMap(pos) {
+  const { latitude } = pos.coords;
+  const { longitude } = pos.coords;
+
+  const coords = [latitude, longitude];
+
+  map = L.map("map").setView(coords, 13);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  //Handles clicks on the map
+  map.on("click", function (mapE) {
+    mapEvent = mapE;
+    const { lat, lng } = mapEvent.latlng;
+
+    viewList.classList.add("not-active");
+    addView.classList.remove("not-active");
+
+    // If a marker is already placed remove it and add the new one on click
+    if (marker) {
+      map.removeLayer(marker);
+    }
+
+    marker = L.marker([lat, lng])
+      .addTo(map)
+      .bindPopup(
+        L.popup({
+          maxWidth: 250,
+          minWidth: 100,
+          autoClose: false,
+          closeOnClick: false,
+          className: "view-popup",
+        })
+      )
+      .setPopupContent();
+
+    // Makes the form visble to the user
+    showForm();
+    cardContainer.classList.add("hidden");
+    pagination_element.classList.add("hidden");
+  });
+  // Renders a marker for every view saved in local storage
+  views.forEach((view) => {
+    renderViewMarker(view);
+  });
+
+  displayList();
+}
+
 // Call the functions
