@@ -91,4 +91,15 @@ function renderMarker(view) {
   L.marker(view.coords).addTo(map);
 }
 
+function showForm() {
+  form.classList.remove("hidden");
+}
+
+function hideForm() {
+  inputName.value = inputImg.value = inputDate.value = viewDescription.value =
+    "";
+  form.classList.add("hidden");
+  cardContainer.classList.toggle("hidden");
+}
+
 // Call the functions
