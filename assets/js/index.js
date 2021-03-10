@@ -22,7 +22,19 @@ let views = [];
 let marker;
 
 //Create a new view object
+class View {
+  // Creates a new id from the last 10 digits of the current date time stamp
+  date = new Date();
+  id = (Date.now() + "").slice(-10);
 
+  constructor(coords, viewImg, uName, date, description) {
+    this.coords = coords;
+    this.uName = uName;
+    this.viewImg = viewImg;
+    this.date = date;
+    this.description = description;
+  }
+}
 // Event handlers
 
 //Functions
