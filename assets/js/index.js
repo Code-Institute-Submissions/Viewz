@@ -115,3 +115,38 @@ function hideForm() {
 }
 
 // Call the functions
+getLocalStorage();
+initCoords();
+loadMap();
+
+// Creates a new view object and saves it to an array and then local storage.
+function newView() {
+  //Get data from the form
+  const { lat, lng } = mapEvent.latlng;
+  const viewImg = inputImg.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+  const uName = inputName.value;
+  const date = inputDate.value;
+  const description = viewDescription.value;
+
+  //Create the view object
+  const view = new View([lat, lng], viewImg, uName, date, description);
+
+  //Add new object the views array
+  views.push(view);
+
+  // Render workout on map as marker
+  renderViewMarker(view);
+
+  // Render workout on list
+  displayList(views, cardContainer, rows, current_page);
+
+  // Hide form + clear input fields
+  hideForm();
+
+  // Set local storage to all workouts
+  setLocalStorage();
+
+  revealViews();
+  setUpPagination(views, pagination_element, rows);
+  checkMark.classList.add("hidden");
+}
