@@ -22,98 +22,221 @@
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin=""
     />
-    <script
-      defer
-      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-      crossorigin=""
-    ></script>
-
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/css/styles.css" />
-    <script defer src="/assets/js/index.js"></script>
   </head>
 
   <body onload="refresh()">
-    <div class="brand-name"><h1>VIEWZ</h1></div>
-    <section id="app-container" class="app-container" onload="initCoords()">
-      <section class="ss1 map-container">
-        <div id="map" class="map"></div>
-      </section>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Viewz</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#section-2"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#mapid">Share</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-      <section class="ss2 view-container">
-        <div class="toggle-container">
-          <div class="toggle-view add-view">
-            <button class="form-btn" type="submit">Add View</button>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="brand-tagline">Capture an experiance</p>
+        <p class="brand-statement">Why not share it with others</p>
+      </div>
+      <div class="img-filter"></div>
+      <img src="assets/imgs/hero.jpg" alt="" />
+    </section>
+
+    <section class="section" id="section-2">
+      <div class="section-title">
+        <h2 class="section-description">Lets get together and</h2>
+        <h3 class="section-header">Share our adventures and experiances</h3>
+      </div>
+      <div class="description">
+        <div class="description-tab-container">
+          <button
+            class="btn description-tab description-tab-1 description-tab-active"
+            data-tab="1"
+          >
+            Share
+          </button>
+          <button class="btn description-tab description-tab-2" data-tab="2">
+            Search
+          </button>
+          <button class="btn description-tab description-tab-3" data-tab="3">
+            Like
+          </button>
+        </div>
+        <div
+          class="description-content description-content-1 description-content-active"
+        >
+          <div class="description-icon description-icon-1">
+            <img src="" alt="" />
           </div>
-          <div class="toggle-view list-views">
-            <button class="form-btn" type="submit">Viewz</button>
-          </div>
+          <h5 class="description-header">Share your most amazing images</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
         </div>
 
-        <div class="form-container">
-          <form id="form" class="form hidden" action="#">
-            <div class="inputs input-container">
-              <div class="input">
-                <label class="img-input-lbl" for="view-img"
-                  ><i class="far fa-images"></i> Upload Image</label
-                >
-                <i class="fa fa-check hidden" aria-hidden="true"></i>
-                <input class="img-input" id="view-img" type="file" required />
-              </div>
-              <div class="input">
-                <input
-                  style="padding-left: 5px"
-                  id="name"
-                  type="text"
-                  placeholder="Name..."
-                  required
-                />
-              </div>
-              <div class="input">
-                <input
-                  style="padding-left: 5px"
-                  id="date"
-                  type="date"
-                  required
-                />
-              </div>
-            </div>
-            <div class="description input-container">
-              <div class="input">
-                <textarea
-                  id="viewDescription"
-                  name="desc"
-                  rows="6"
-                  cols="1"
-                  style="resize: none"
-                  placeholder="Description..."
-                  required
-                ></textarea>
-              </div>
-            </div>
-            <div class="btn-container">
-              <button class="submit-btn" type="submit">Submit</button>
-            </div>
-          </form>
+        <div class="description-content description-content-2">
+          <div class="description-icon description-icon-2">
+            <img src="" alt="" />
+          </div>
+          <h5 class="description-header">
+            Buy a home or make your dreams come true, with instant loans.
+          </h5>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </p>
         </div>
+        <div class="description-content description-content-3">
+          <div class="description-icon description-icon-3">
+            <img src="" alt="" />
+          </div>
+          <h5 class="description-header">
+            No longer need your account? No problem! Close it instantly.
+          </h5>
+          <p>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <section class="cards container" id="list"></section>
+    <section id="mapid"></section>
 
-        <div class="pagenumbers footer" id="pagination"></div>
-      </section>
+    <section class="ss2 view-container">
+      <div class="toggle-container">
+        <div class="toggle-view add-view">
+          <button class="add-view-btn form-btn" type="submit">Add View</button>
+        </div>
+        <div class="toggle-view list-views">
+          <button class="viewz-btn form-btn" type="submit">Viewz</button>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <form id="form" class="form hidden" action="#">
+          <div class="inputs input-container">
+            <div class="input">
+              <label class="img-input-lbl" for="view-img"
+                ><i class="far fa-images"></i> Upload Image</label
+              >
+              <i class="fa fa-check hidden" aria-hidden="true"></i>
+              <input class="img-input" id="view-img" type="file" required />
+            </div>
+            <div class="input">
+              <input
+                style="padding-left: 5px"
+                id="name"
+                type="text"
+                placeholder="Name..."
+                required
+              />
+            </div>
+            <div class="input">
+              <input style="padding-left: 5px" id="date" type="date" required />
+            </div>
+          </div>
+          <div class="view-description input-container">
+            <div class="input">
+              <textarea
+                id="viewDescription"
+                name="desc"
+                rows="6"
+                cols="1"
+                style="resize: none"
+                placeholder="Description..."
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="btn-container">
+            <button class="submit-btn" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <section class="cards" id="list"></section>
+
+      <div class="pagenumbers footer" id="pagination"></div>
     </section>
 
     <section class="popUp hidden" id="popUp"></section>
 
+    <footer id="footer">
+      <div class="sign-up">
+        <div>
+          <p>
+            Sign up for your free account today and start sharing your
+            experiances
+          </p>
+        </div>
+        <div><button>Sign Up</button></div>
+      </div>
+      <div class="social-container">
+        <div><img src="" alt="" /></div>
+        <div><img src="" alt="" /></div>
+        <div><img src="" alt="" /></div>
+      </div>
+      <div class="copyright"><p>© Copyright Maurice Murphy 2021</p></div>
+    </footer>
+
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-      crossorigin="anonymous"
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
     ></script>
+
+    <script src="/assets/js/index.js"></script>
+
+    <!-- <script>
+      let mymap = L.map("mapid").setView([51.505, -0.09], 13);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: "mapbox/streets-v11",
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: "your.mapbox.access.token",
+      }).addTo(mymap);
+    </script> -->
   </body>
 </html>
