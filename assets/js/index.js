@@ -177,3 +177,32 @@ function displayList(views, wrapper, rows_per_page, page) {
     cardContainer.insertAdjacentHTML("afterbegin", html);
   }
 }
+
+// Setting up pagination. Page buttons display based on the number of view objects in the array and the Rows variable.
+function setUpPagination(views, wrapper, rows_per_page) {
+  pagination_element.innerHTML = "";
+  let page_count = Math.ceil(views.length / rows_per_page);
+  for (let i = 1; i < page_count + 1; i++) {
+    let btn = paginationButton(i, views);
+    wrapper.appendChild(btn);
+  }
+}
+
+// Creating the page button
+function paginationButton(page, views) {
+  let button = document.createElement("button");
+  button.innerText = page;
+
+  if (current_page == page) button.classList.add("active");
+
+  button.addEventListener("click", function () {
+    current_page = page;
+    displayList(views, cardContainer, rows, current_page);
+
+    let current_btn = document.querySelector(".pagenumbers button.active");
+    current_btn.classList.remove("active");
+
+    button.classList.add("active");
+  });
+  return button;
+}
