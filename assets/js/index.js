@@ -150,3 +150,30 @@ function newView() {
   setUpPagination(views, pagination_element, rows);
   checkMark.classList.add("hidden");
 }
+
+// Displays  the view cards in a list. Rows variable determines how many view cards are displayed on the page.
+function displayList(views, wrapper, rows_per_page, page) {
+  if (wrapper.innerHTML) {
+    wrapper.innerHTML = "";
+  }
+  page--;
+
+  let start = rows_per_page * page;
+  let end = start + rows_per_page;
+  let paginatedItems = views.slice(start, end);
+
+  for (let i = 0; i < paginatedItems.length; i++) {
+    let item = paginatedItems[i];
+
+    const html = `
+          <div class="card" style="margin: 10px;" data-id=${item.id}>
+          <img class="card-img-top" src="assets/imgs/${item.viewImg}" alt="">
+          <div class="card-body">
+              <h1 class="card-title" style="text-align: center;">${item.uName}</h1>
+              <p class="card-text" style="text-align: center;">${item.date}</p>
+            </div>
+       </div>
+    `;
+    cardContainer.insertAdjacentHTML("afterbegin", html);
+  }
+}
