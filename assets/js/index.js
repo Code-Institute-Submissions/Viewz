@@ -224,3 +224,36 @@ function paginationButton(page, views) {
   });
   return button;
 }
+
+// Zooms the map to the selected view and displays a pop-up with the view details.
+function moveToMarker(e) {
+  const viewEl = e.target.closest(".card");
+
+  if (!viewEl) return;
+
+  const view = views.find((view) => view.id === viewEl.dataset.id);
+
+  let html = `
+      <div class="modal-header">
+        <div class="title">${view.uName} <p style="display: inline; font-size: 1rem;">${view.date}</p></div>
+        <button id="close-btn" class="close-btn">&times;</button>      
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-container"><img style="width: 100%;" src="assets/imgs/${view.viewImg}" alt=""></div>
+        <div class="modal-text-container">${view.description}</div>
+      </div>
+      <div class="modal-footer"></div>
+  `;
+
+  map.setView(view.coords, 18, {
+    animate: true,
+    pan: {
+      duration: 1,
+    },
+  });
+  popUp.innerHTML = "";
+  popUp.insertAdjacentHTML("afterbegin", html);
+  popUp.classList.remove("hidden");
+  popUp.scrollIntoView();
+  appContainer.classList.add("blur");
+}
