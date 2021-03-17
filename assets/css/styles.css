@@ -486,3 +486,79 @@ div.card-body {
 .blur {
   filter: blur(10px);
 }
+
+/* ----------Form---------- */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+textarea {
+  padding: 15px 0 0 15px;
+  border-radius: 10px;
+  border: 1px solid var(--bg-color-border);
+  width: 200px;
+}
+
+.description {
+  padding: 0 80px 0 0;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label.img-input-lbl {
+  display: inline;
+  padding: 5px 15px;
+  margin-top: 40px;
+  color: var(--bg-color-text);
+  height: 30px;
+  width: 200px;
+  z-index: 100;
+  font-size: 1rem;
+  border: 1px solid var(--bg-color-border);
+  border-radius: 5px;
+  background: #fff;
+}
+
+.fa-check {
+  color: #21af21;
+  border: 1px solid #21af21;
+  border-radius: 50%;
+  font-size: 1rem;
+  padding: 3px;
+  margin-left: 1rem;
+  background: #fff;
+}
+
+i.far {
+  padding-right: 5px;
+}
+
+.input-container {
+  width: 50%;
+  min-width: 280px;
+  padding-left: 25px;
+}
+
+.inputs {
+  padding-top: 20px;
+  padding-left: 120px !important;
+}
+
+input {
+  border: 1px solid var(--bg-color-primary) !important;
+  border-radius: 5px;
+  height: 30px !important;
+  color: var(--bg-color-text) !important;
+}
+
+input::placeholder {
+  color: var(--bg-color-text);
+}
+
+input#date {
+  color: var(--bg-color-text);
+}
