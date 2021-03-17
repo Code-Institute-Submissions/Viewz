@@ -81,6 +81,11 @@ addView.addEventListener("click", (e) => {
   pagination_element.classList.add("hidden");
 });
 
+// When image is selected in the file input green check mark icon hidden class is removed
+document.addEventListener("change", (e) => {
+  checkMark.classList.remove("hidden");
+});
+
 //Functions
 // Getting the users current location coords from the browsers geolocation
 function initCoords() {
