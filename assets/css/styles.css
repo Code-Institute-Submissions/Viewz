@@ -415,3 +415,74 @@ div.card-body {
   background-color: var(--bg-color-primary);
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
+
+/* ---------PopUp modal ---------*/
+
+.popUp {
+  width: 75vw;
+  position: absolute !important;
+  z-index: 10 !important;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  border: 1px solid var(--bg-color-border);
+  border-radius: 20px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  height: 50px;
+  padding: 10px 15px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--bg-color-border);
+  z-index: 200;
+}
+
+.modal-body {
+  display: flex;
+}
+
+.modal-footer {
+  height: 50px;
+}
+
+.modal-header .title {
+  font-size: 2rem;
+  padding-left: 3rem;
+}
+
+.title p {
+  padding-left: 2rem;
+}
+
+.modal-header .close-btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--bg-color-primary);
+  font-size: 2rem;
+  font-weight: 400;
+  width: 40px;
+}
+
+.modal-img-container {
+  width: 100%;
+  min-width: 315px;
+  border-bottom: 1px solid var(--bg-color-border);
+  border-top: 1px solid var(--bg-color-border);
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.modal-text-container {
+  min-width: 400px;
+  width: 100%;
+  padding: 40px !important;
+}
+
+.blur {
+  filter: blur(10px);
+}
