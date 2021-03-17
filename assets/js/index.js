@@ -46,6 +46,15 @@ function initCoords() {
     });
 }
 
+// Function that runs when page is refreshed.  Sets the add view section visible
+function refresh() {
+  form.classList.remove("hidden");
+  cardContainer.classList.add("hidden");
+  viewList.classList.add("not-active");
+  addView.classList.remove("not-active");
+  pagination_element.classList.add("hidden");
+}
+
 // Creaties a map using the Leaflet Js API
 function loadMap(pos) {
   const { latitude } = pos.coords;
@@ -112,6 +121,15 @@ function hideForm() {
     "";
   form.classList.add("hidden");
   cardContainer.classList.toggle("hidden");
+}
+
+// Function to  reveal  the hidden  views. The hidden class sets the display to none
+function revealViews() {
+  cardContainer.classList.remove("hidden");
+  form.classList.add("hidden");
+  addView.classList.add("not-active");
+  viewList.classList.remove("not-active");
+  pagination_element.classList.remove("hidden");
 }
 
 // Call the functions
