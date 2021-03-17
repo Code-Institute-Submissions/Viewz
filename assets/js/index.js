@@ -37,6 +37,24 @@ class View {
 }
 // Event handlers
 
+// Handling clicks on the tabs in the description section
+tabsContainer.addEventListener("click", function (e) {
+  const clicked = e.target.closest(".description-tab");
+
+  if (!clicked) return;
+
+  // Remove active tab class
+  tabs.forEach((t) => t.classList.remove("description-tab-active"));
+  tabsContent.forEach((e) => e.classList.remove("description-content-active"));
+
+  // Active tab
+  clicked.classList.add("description-tab-active");
+
+  document
+    .querySelector(`.description-content-${clicked.dataset.tab}`)
+    .classList.add("description-content-active");
+});
+
 //Functions
 // Getting the users current location coords from the browsers geolocation
 function initCoords() {
