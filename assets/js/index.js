@@ -13,6 +13,9 @@ const closeBtn = document.getElementById("close-btn");
 const popUp = document.getElementById("popUp");
 const pagination_element = document.getElementById("pagination");
 const checkMark = document.querySelector(".fa-check");
+const tabs = document.querySelectorAll(".description-tab");
+const tabsContainer = document.querySelector(".description-tab-container");
+const tabsContent = document.querySelectorAll(".description-content");
 let current_page = 1;
 let rows = 4;
 let image;
@@ -20,6 +23,7 @@ let mapEvent;
 let map;
 let views = [];
 let marker;
+let pos;
 
 //Create a new view object
 class View {
@@ -89,6 +93,7 @@ document.addEventListener("change", (e) => {
 // Use some listener function to listen for a click on a element with a matching class name
 document.addEventListener("click", someListener);
 
+// Helper function that closes the popup modall
 function someListener(e) {
   let el = e.target;
   if (el.classList.contains("close-btn")) {
@@ -118,12 +123,12 @@ function refresh() {
 
 // Creaties a map using the Leaflet Js API
 function loadMap(pos) {
-  const { latitude } = pos.coords;
-  const { longitude } = pos.coords;
+  // const { latitude } = pos.coords;
+  // const { longitude } = pos.coords;
 
-  const coords = [latitude, longitude];
+  // const coords = [latitude, longitude];
 
-  map = L.map("map").setView(coords, 13);
+  map = L.map("mapid").setView([51.5073509, -0.1277583], 13);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:

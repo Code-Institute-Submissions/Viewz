@@ -15,7 +15,6 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
 }
-
 /*<---------Navbar--------->*/
 .navbar {
   height: 70px;
@@ -148,22 +147,23 @@
 .description-content {
   display: none;
   text-align: center;
-
   font-size: 1.7rem;
   padding: 2.5rem 7rem 6.5rem 7rem;
 }
 
 .description-content-active {
   display: grid;
-  grid-template-columns: 7rem 1fr;
-  column-gap: 3rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
   row-gap: 0.5rem;
 }
 
 .description-header {
   font-size: 2.25rem;
   font-weight: 500;
-  align-self: center;
+  text-align: center;
+  grid-row: 1;
+  width: 100%;
 }
 
 .description-icon {
@@ -181,7 +181,7 @@
 }
 
 .description-content p {
-  grid-column: 2;
+  grid-row: 2;
 }
 
 .btn {
@@ -651,7 +651,7 @@ footer {
   }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 880px) {
   .hero img {
     width: auto;
     height: 100vh;
@@ -669,5 +669,26 @@ footer {
 
   .title p {
     font-size: 0.8rem !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .description-tab-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn.description-tab {
+    margin: 10px 0;
+  }
+
+  .section-description {
+    text-align: center;
+  }
+
+  .section-header {
+    text-align: center;
   }
 }
