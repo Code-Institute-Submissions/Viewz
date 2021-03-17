@@ -66,6 +66,21 @@ form.addEventListener("submit", (e) => {
 // Move map marker to selected view and display  popup
 cardContainer.addEventListener("click", moveToMarker);
 
+// Reveal views and set up pagination
+viewList.addEventListener("click", (e) => {
+  revealViews();
+  setUpPagination(views, pagination_element, rows);
+});
+
+// Reveal the input form to submit a new view
+addView.addEventListener("click", (e) => {
+  form.classList.remove("hidden");
+  cardContainer.classList.add("hidden");
+  viewList.classList.add("not-active");
+  addView.classList.remove("not-active");
+  pagination_element.classList.add("hidden");
+});
+
 //Functions
 // Getting the users current location coords from the browsers geolocation
 function initCoords() {
