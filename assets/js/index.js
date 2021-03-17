@@ -257,3 +257,21 @@ function moveToMarker(e) {
   popUp.scrollIntoView();
   appContainer.classList.add("blur");
 }
+
+// Using browser Local Storage API to store data locally
+function getLocalStorage() {
+  const data = JSON.parse(localStorage.getItem("views"));
+
+  if (!data) return;
+
+  views = data;
+
+  views.forEach((view) => {
+    displayList(views, cardContainer, rows, current_page);
+  });
+}
+
+//Set the local storage with current data
+function setLocalStorage() {
+  localStorage.setItem("views", JSON.stringify(views));
+}
