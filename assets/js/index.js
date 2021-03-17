@@ -86,6 +86,18 @@ document.addEventListener("change", (e) => {
   checkMark.classList.remove("hidden");
 });
 
+// Use some listener function to listen for a click on a element with a matching class name
+document.addEventListener("click", someListener);
+
+function someListener(e) {
+  let el = e.target;
+  if (el.classList.contains("close-btn")) {
+    popUp.classList.add("hidden");
+    appContainer.classList.remove("blur");
+    popUp.innerHTML = "";
+  }
+}
+
 //Functions
 // Getting the users current location coords from the browsers geolocation
 function initCoords() {
