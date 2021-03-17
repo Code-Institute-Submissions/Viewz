@@ -15,3 +15,17 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
 }
+
+/*<---------Navbar--------->*/
+.navbar {
+  height: 70px;
+  background: linear-gradient(
+    90deg,
+    var(--bg-color-gradOne) 25%,
+    var(--bg-color-gradTwo) 75%
+  );
+}
+
+.navbar-brand {
+  font-size: 2rem;
+}
