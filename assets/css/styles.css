@@ -562,3 +562,55 @@ input::placeholder {
 input#date {
   color: var(--bg-color-text);
 }
+
+/* ----------Footer---------- */
+footer {
+  height: 500px;
+  background: #37383d;
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.sign-up p {
+  text-align: center;
+  width: 80vw;
+  color: var(--bg-color-gradOne);
+  font-size: 2rem;
+  padding: 25px;
+  margin: 30px 0 0 0;
+}
+
+.sign-up button {
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 184, 0, 1) 25%,
+    rgba(255, 143, 0, 1) 75%
+  );
+  color: #fff;
+  line-height: 40px;
+  font-size: 1.4rem;
+}
+
+.social-container {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+}
+
+.copyright {
+  color: #fff;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px;
+}
