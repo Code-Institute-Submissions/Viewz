@@ -1,5 +1,6 @@
 // Create and assign variables
 const appContainer = document.getElementById("app-container");
+const formContainer = document.querySelector(".form-container");
 const form = document.getElementById("form");
 const viewDescription = document.getElementById("viewDescription");
 const inputName = document.getElementById("name");
@@ -79,6 +80,7 @@ viewList.addEventListener("click", (e) => {
 // Reveal the input form to submit a new view
 addView.addEventListener("click", (e) => {
   form.classList.remove("hidden");
+  formContainer.classList.remove("hidden");
   cardContainer.classList.add("hidden");
   viewList.classList.add("not-active");
   addView.classList.remove("not-active");
@@ -192,7 +194,7 @@ function hideForm() {
 // Function to  reveal  the hidden  views. The hidden class sets the display to none
 function revealViews() {
   cardContainer.classList.remove("hidden");
-  form.classList.add("hidden");
+  formContainer.classList.add("hidden");
   addView.classList.add("not-active");
   viewList.classList.remove("not-active");
   pagination_element.classList.remove("hidden");

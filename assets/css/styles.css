@@ -16,8 +16,9 @@
   font-size: 14px;
 }
 /*<---------Navbar--------->*/
-.navbar {
+.main-nav {
   height: 70px;
+  width: 100vw;
   background: linear-gradient(
     90deg,
     var(--bg-color-gradOne) 25%,
@@ -25,15 +26,49 @@
   );
 }
 
-.navbar-brand {
+.navbar-mid {
+  height: 70px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+}
+
+.navbar-mid a {
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar-left {
+  display: flex;
+}
+
+.navbar-item {
+  padding-left: 20px;
+}
+
+.navbar-right {
+  font-size: 2rem;
+  width: 100px;
+}
+
+.navbar-right a {
   font-size: 2rem;
 }
 
 /*<---------hero--------->*/
 .hero {
   position: relative;
-  height: 500px;
+  height: 600px;
   overflow: hidden;
+}
+
+.hero-img-container {
+  height: 100%;
+  width: 100%;
+  background-image: url("../imgs/hero.jpg");
+  background-size: cover;
 }
 
 .hero img {
@@ -223,6 +258,10 @@
 }
 
 /*<---------Views--------->*/
+.height {
+  height: 620px !important;
+}
+
 form {
   display: flex;
   flex-direction: row;
@@ -238,7 +277,7 @@ form {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   margin: 0;
-  height: 300px;
+  height: 350px;
 }
 
 .leaflet-popup-content-wrapper {
@@ -574,7 +613,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  height: 300px;
 }
 
 .sign-up p {
@@ -598,17 +637,25 @@ footer {
   color: #fff;
   line-height: 40px;
   font-size: 1.4rem;
+  margin-top: 25px;
 }
 
 .social-container {
   display: flex;
   justify-content: center;
-  height: 200px;
+  align-items: flex-end;
+  height: 120px;
+}
+
+.social-container i {
+  margin: 0 30px;
+  font-size: 2rem;
+  color: #fff;
 }
 
 .copyright {
   color: #fff;
-  height: 100px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -651,6 +698,12 @@ footer {
   }
 }
 
+@media only screen and (max-width: 1095px) {
+  .view-container {
+    height: 620px;
+  }
+}
+
 @media only screen and (max-width: 880px) {
   .hero img {
     width: auto;
@@ -680,6 +733,10 @@ footer {
     align-items: center;
   }
 
+  .container {
+    height: 70px !important;
+  }
+
   .btn.description-tab {
     margin: 10px 0;
   }
@@ -691,4 +748,56 @@ footer {
   .section-header {
     text-align: center;
   }
+}
+
+@media only screen and (max-width: 550px) {
+  .view-container {
+    height: 1200px;
+  }
+
+  .hero-img-container {
+    background-position-x: -250px;
+  }
+}
+
+/* ----------SignUp Page---------- */
+.page-msg {
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    var(--bg-color-gradOne) 25%,
+    var(--bg-color-gradTwo) 75%
+  );
+  padding-top: 200px;
+}
+
+.page-msg-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 80vw;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+}
+
+.page-msg-container p {
+  text-align: center;
+  padding: 10px;
+  font-size: 2rem;
+  color: #464646;
+}
+
+.page-msg-container a {
+  width: 100px;
+  text-align: center;
+  margin-top: 50px;
+  padding: 5px;
+  font-size: 1.4rem;
+  color: #464646;
+  text-decoration: none;
+  border: 1px solid #464646;
+  border-radius: 10px;
 }
