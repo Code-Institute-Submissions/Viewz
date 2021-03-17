@@ -67,3 +67,150 @@
   z-index: 5;
   background: rgba(0, 0, 0, 0.5);
 }
+
+/*<---------Description Section--------->*/
+#section-2 {
+  background: #fff7df;
+}
+
+#section-2 h2 {
+  font-size: 1.2rem;
+  color: var(--bg-color-gradTwo);
+}
+
+#section-2 h3 {
+  font-size: 2.6rem;
+  color: var(--bg-color-gradOne);
+}
+
+#section-2 h5 {
+  color: var(--bg-color-gradOne);
+}
+
+#section-2 p {
+  color: #222222;
+}
+
+.section-title {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.section-title h2 {
+  font-size: 1rem;
+  padding-top: 50px;
+}
+
+.description {
+  background: var(--bg-color-tertiary) f;
+  max-width: 100rem;
+  margin: 8rem auto 0 auto;
+  padding: 0 !important;
+}
+
+.description-tab-container {
+  display: flex;
+  justify-content: center;
+}
+
+.description-tab {
+  margin-right: 2.5rem;
+  transform: translateY(-50%);
+}
+
+.description-tab span {
+  margin-right: 1rem;
+  display: inline-block;
+  color: #fff;
+}
+
+.description-tab-1 {
+  background-color: var(--color-secondary);
+}
+
+.description-tab-1:hover {
+  background-color: var(--color-secondary-darker);
+}
+
+.description-tab-3 {
+  background-color: var(--color-tertiary);
+  margin: 0;
+}
+
+.description-tab-3:hover {
+  background-color: var(--color-tertiary-darker);
+}
+
+.description-tab-active {
+  transform: translateY(-66%);
+}
+
+.description-content {
+  display: none;
+  text-align: center;
+
+  font-size: 1.7rem;
+  padding: 2.5rem 7rem 6.5rem 7rem;
+}
+
+.description-content-active {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  column-gap: 3rem;
+  row-gap: 0.5rem;
+}
+
+.description-header {
+  font-size: 2.25rem;
+  font-weight: 500;
+  align-self: center;
+}
+
+.description-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+}
+
+.description-icon svg {
+  height: 2.75rem;
+  width: 2.75rem;
+}
+
+.description-content p {
+  grid-column: 2;
+}
+
+.btn {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 143, 0, 1) 25%,
+    rgba(255, 184, 0, 1) 75%
+  );
+  height: 30px;
+  width: 150px;
+  border-radius: 20px !important;
+  color: #fff;
+}
+
+.description-icon-1 {
+  background-color: var(--color-secondary-opacity);
+}
+.description-icon-2 {
+  background-color: var(--color-primary-opacity);
+}
+.description-icon-3 {
+  background-color: var(--color-tertiary-opacity);
+}
+.description-icon-1 svg {
+  fill: var(--color-secondary-darker);
+}
+.description-icon-2 svg {
+  fill: var(--color-primary);
+}
+.description-icon-3 svg {
+  fill: var(--color-tertiary);
+}
