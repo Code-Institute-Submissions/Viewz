@@ -55,6 +55,17 @@ tabsContainer.addEventListener("click", function (e) {
     .classList.add("description-content-active");
 });
 
+// Creates a new view object , hides the form and shows the page numbers
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  newView();
+  form.classList.add("hidden");
+  pagination_element.classList.remove("hidden");
+});
+
+// Move map marker to selected view and display  popup
+cardContainer.addEventListener("click", moveToMarker);
+
 //Functions
 // Getting the users current location coords from the browsers geolocation
 function initCoords() {
