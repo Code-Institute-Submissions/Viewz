@@ -180,10 +180,12 @@
 }
 
 .description-content {
+  margin: 0 auto;
   display: none;
   text-align: center;
   font-size: 1.7rem;
   padding: 2.5rem 7rem 6.5rem 7rem;
+  width: 80%;
 }
 
 .description-content-active {
