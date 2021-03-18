@@ -1,5 +1,5 @@
 // Create and assign variables
-const appContainer = document.getElementById("app-container");
+const site = document.querySelector("body");
 const formContainer = document.querySelector(".form-container");
 const form = document.getElementById("form");
 const viewDescription = document.getElementById("viewDescription");
@@ -20,6 +20,7 @@ const tabsContent = document.querySelectorAll(".description-content");
 let current_page = 1;
 let rows = 4;
 let image;
+let mapE;
 let mapEvent;
 let map;
 let views = [];
@@ -100,7 +101,9 @@ function someListener(e) {
   let el = e.target;
   if (el.classList.contains("close-btn")) {
     popUp.classList.add("hidden");
-    appContainer.classList.remove("blur");
+    let allSections = Array.from(document.querySelectorAll("section"));
+    console.log(allSections);
+    allSections.forEach((e) => e.classList.remove("blur"));
     popUp.innerHTML = "";
   }
 }
@@ -144,6 +147,9 @@ function loadMap(pos) {
 
     viewList.classList.add("not-active");
     addView.classList.remove("not-active");
+    form.classList.remove("hidden");
+    formContainer.classList.remove("hidden");
+    cardContainer.classList.add("hidden");
 
     // If a marker is already placed remove it and add the new one on click
     if (marker) {
@@ -168,6 +174,7 @@ function loadMap(pos) {
     cardContainer.classList.add("hidden");
     pagination_element.classList.add("hidden");
   });
+
   // Renders a marker for every view saved in local storage
   views.forEach((view) => {
     renderViewMarker(view);
@@ -176,7 +183,7 @@ function loadMap(pos) {
   displayList();
 }
 
-function renderMarker(view) {
+function renderViewMarker(view) {
   L.marker(view.coords).addTo(map);
 }
 
@@ -323,7 +330,9 @@ function moveToMarker(e) {
   popUp.insertAdjacentHTML("afterbegin", html);
   popUp.classList.remove("hidden");
   popUp.scrollIntoView();
-  appContainer.classList.add("blur");
+  let allSections = Array.from(document.querySelectorAll("section"));
+  allSections.forEach((e) => e.classList.add("blur"));
+  popUp.classList.remove("blur");
 }
 
 // Using browser Local Storage API to store data locally

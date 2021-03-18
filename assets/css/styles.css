@@ -463,7 +463,7 @@ div.card-body {
   width: 75vw;
   position: absolute !important;
   z-index: 10 !important;
-  top: -10%;
+  top: 140%;
   left: 50%;
   transform: translate(-50%, 50%);
   border: 1px solid var(--bg-color-border);
@@ -759,6 +759,14 @@ footer {
 
   .hero-img-container {
     background-position-x: -250px;
+  }
+
+  .inputs {
+    margin-top: 100px;
+  }
+
+  input {
+    width: 65%;
   }
 }
 
