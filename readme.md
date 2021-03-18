@@ -54,9 +54,9 @@ I have created a web application for users to share their experiences through th
 
 ## 3. Structure
 
-This is a single page application. The screen is divided in two. The top section displays the map, and the bottom section is for both the submission form and the views. The app loads a map that is centered on your location, when you open the page.
+This is a single page site. The screen is divided in four main sections. Section one constists of the navbar and hero image. Section 2 is a description section, that explains a little about the purpose of the site. Section three displays the map and a submission form and the views section. Finally the fourth section/footer gives the user a chance to sign up as a member and also contains the social media icons.
 
-The user can then place a marker on the map to indicate where he/she has taken the photo to be uploaded. Once a marker is placed, the image upload form will appear. The user is prompted to upload the desired image and some other required information that will later appear on the app.
+The main section is the third section and is where the bulk of the functionality is located. The app loads a map that is centered on the users location, when the user opens the page. The user can then place a marker on the map to indicate where he/she has taken the photo to be uploaded. Once a marker is placed, the image upload form will appear. The user is prompted to upload the desired image and some other required information that will later appear on the app.
 
 The user then will submit the form with all the required fields and the uploaded image. The details will be added to the views section the form of a card.
 
